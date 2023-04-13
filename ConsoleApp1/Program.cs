@@ -15,7 +15,7 @@ namespace ConsoleApp1
             var arr = Enumerable.Range(NumbersStart, NumbersEnd + 1).Select(_ => Random.Next(10)).ToArray();
             arr = arr.OrderBy(x => x).ToArray();
 
-            arr.Select((value, index) => $"{index}: {value}").ForEach(Console.WriteLine); 
+            arr.Select((value, index) => $"{index,2}: {value,2}").ForEach(Console.WriteLine); 
 
             Console.ReadKey();
         }
