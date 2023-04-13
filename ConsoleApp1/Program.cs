@@ -15,12 +15,16 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            var arr = Enumerable.Range(0, NumbersCount).Select(_ => new Item { Number = Random.Next(10), Value = new string('x', Random.Next(VelueLengthStart, VelueLengthEnd))}) .ToArray();
-            var arr = Enumerable.Range(NumbersStart, NumbersEnd + 1).Select(_ => Random.Next(10)).ToArray();
+            var arr = Enumerable
+                .Range(0, NumbersCount)
+                .Select(_ => new Item { 
+                    Number = Random.Next(10), Value = new string('x', Random.Next(VelueLengthStart, VelueLengthEnd))
+                })
+                .ToArray();
             arr = arr.OrderBy(x => x.Number).ToArray();
 
-            Console.WriteLine(string.Join(", ", arr.Select(i => $"{i.Number} - {i.Value}")));
-            arr.Select((value, index) => $"{index,2}: {value,2}").ForEach(Console.WriteLine); 
+
+            arr.Select((value, index) => $"{index,2}: {value.Number,2} - {value.Value}").ForEach(Console.WriteLine); 
 
             Console.ReadKey();
         }
