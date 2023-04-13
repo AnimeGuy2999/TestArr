@@ -11,6 +11,10 @@ namespace ConsoleApp1
         {
             var arr = Enumerable.Range(0, NumbersCount).Select(_ => Random.Next(10)).ToArray();
             arr = arr.OrderBy(x => x).ToArray();
+
+            Console.WriteLine(string.Join(" ", arr));
+
+            Console.ReadKey();
         }
     }
 }
